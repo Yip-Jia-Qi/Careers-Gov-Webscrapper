@@ -36,7 +36,7 @@ job_details <- function(job_page){
   sample_job_desc<-sample_job %>%
     html_nodes("div#job-details")%>%
     html_text() %>%                      
-    gsub("^\\s+|\\s+$|\\n", "", .)
+    gsub("^\\s+|\\s+$|\\n", " ", .)
   if (identical(sample_job_desc,character(0))){
     sample_job_desc<-"NA"
   }
